@@ -4,8 +4,8 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-}
 
+}
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -69,4 +69,19 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+
 }
+
+.auth {
+  @apply flex-center justify-center min-h-screen w-full
+}
+
+@layer utilities {
+
+  /* ===== ALIGNMENTS */
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+}
+
+

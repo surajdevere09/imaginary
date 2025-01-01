@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono ,IBM_Plex_Sans} from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { ClerkProvider, SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton } from "@clerk/nextjs";
 
 
 const geistSans = Geist({
@@ -31,12 +35,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <ClerkProvider appearance={{
+      variables:{
+        colorPrimary:"#624cf5"
+      }
+    }}>
     <html lang="en">
       <body
         className={cn("font-IBMPLEX antialiased", ibmPlexSans.variable)}
-      >
+        >
+            <SignedOut>
+            <SignInButton />
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
         {children}
       </body>
     </html>
+   </ClerkProvider>
   );
 }
