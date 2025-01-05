@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div>
       <p className="">Home</p>
-      <UserButton afterSwitchSessionUrl='/'  />
+      {/* <UserButton afterSwitchSessionUrl='/'  /> */}
     </div>
   )
 }
